@@ -43,7 +43,7 @@ PeerOrgs:
     #                 Org.Domain, respectively.
     # ---------------------------------------------------------------------------
     # Specs:
-    #   - Hostname: foo # implicitly "foo.Sfeir.onlinepay.com"
+    #   - Hostname: foo # implicitly "foo.sfeir.onlinepay.com"
     #     CommonName: foo27.org5.onlinepay.com # overrides Hostname-based FQDN set above
     #   - Hostname: bar
     #   - Hostname: baz
