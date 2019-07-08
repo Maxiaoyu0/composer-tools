@@ -134,8 +134,8 @@ cat << EOF > DevServer_connection.json
 }
 EOF
 
-PRIVATE_KEY="${DIR}"/composer/crypto-config/peerOrganizations/sfeir.onlinepay.com/users/Admin@Sfeir.onlinepay.com/msp/keystore/114aab0e76bf0c78308f89efc4b8c9423e31568da0c340ca187a9b17aa9a4457_sk
-CERT="${DIR}"/composer/crypto-config/peerOrganizations/sfeir.onlinepay.com/users/Admin@Sfeir.onlinepay.com/msp/signcerts/Admin@Sfeir.onlinepay.com-cert.pem
+PRIVATE_KEY="${DIR}"/composer/crypto-config/peerOrganizations/sfeir.onlinepay.com/users/Admin@sfeir.onlinepay.com/msp/keystore/4a431895386b0e349c5da1d9aa09b3748ffb967f02064a2a3407aa77e982b08a_sk
+CERT="${DIR}"/composer/crypto-config/peerOrganizations/sfeir.onlinepay.com/users/Admin@sfeir.onlinepay.com/msp/signcerts/Admin@sfeir.onlinepay.com-cert.pem
 
 if [ "${NOIMPORT}" != "true" ]; then
     CARDOUTPUT=/tmp/PeerAdmin@hlfv1.card
