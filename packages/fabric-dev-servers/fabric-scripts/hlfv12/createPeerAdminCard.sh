@@ -20,7 +20,7 @@ Usage() {
 	echo -e "\t-h or --host:\t\t(Optional) name of the host to specify in the connection profile"
 	echo -e "\t-n or --noimport:\t(Optional) don't import into card store"
 	echo ""
-	echo "Example: ./createPeerAdminCard.sh"
+	echo "onlinepay: ./createPeerAdminCard.sh"
 	echo ""
 	exit 1
 }
@@ -82,7 +82,7 @@ cat << EOF > DevServer_connection.json
     "x-commitTimeout": 300,
     "version": "1.0.0",
     "client": {
-        "organization": "Org1",
+        "organization": "Sfeir",
         "connection": {
             "timeout": {
                 "peer": {
@@ -97,45 +97,45 @@ cat << EOF > DevServer_connection.json
     "channels": {
         "composerchannel": {
             "orderers": [
-                "orderer.example.com"
+                "orderer.onlinepay.com"
             ],
             "peers": {
-                "peer0.org1.example.com": {}
+                "peer0.sfeir.onlinepay.com": {}
             }
         }
     },
     "organizations": {
-        "Org1": {
-            "mspid": "Org1MSP",
+        "Sfeir": {
+            "mspid": "SfeirMSP",
             "peers": [
-                "peer0.org1.example.com"
+                "peer0.sfeir.onlinepay.com"
             ],
             "certificateAuthorities": [
-                "ca.org1.example.com"
+                "ca.sfeir.onlinepay.com"
             ]
         }
     },
     "orderers": {
-        "orderer.example.com": {
+        "orderer.onlinepay.com": {
             "url": "grpc://${HOST}:7050"
         }
     },
     "peers": {
-        "peer0.org1.example.com": {
+        "peer0.sfeir.onlinepay.com": {
             "url": "grpc://${HOST}:7051"
         }
     },
     "certificateAuthorities": {
-        "ca.org1.example.com": {
+        "ca.sfeir.onlinepay.com": {
             "url": "http://${HOST}:7054",
-            "caName": "ca.org1.example.com"
+            "caName": "ca.sfeir.onlinepay.com"
         }
     }
 }
 EOF
 
-PRIVATE_KEY="${DIR}"/composer/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore/114aab0e76bf0c78308f89efc4b8c9423e31568da0c340ca187a9b17aa9a4457_sk
-CERT="${DIR}"/composer/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/signcerts/Admin@org1.example.com-cert.pem
+PRIVATE_KEY="${DIR}"/composer/crypto-config/peerOrganizations/sfeir.onlinepay.com/users/Admin@Sfeir.onlinepay.com/msp/keystore/114aab0e76bf0c78308f89efc4b8c9423e31568da0c340ca187a9b17aa9a4457_sk
+CERT="${DIR}"/composer/crypto-config/peerOrganizations/sfeir.onlinepay.com/users/Admin@Sfeir.onlinepay.com/msp/signcerts/Admin@Sfeir.onlinepay.com-cert.pem
 
 if [ "${NOIMPORT}" != "true" ]; then
     CARDOUTPUT=/tmp/PeerAdmin@hlfv1.card
