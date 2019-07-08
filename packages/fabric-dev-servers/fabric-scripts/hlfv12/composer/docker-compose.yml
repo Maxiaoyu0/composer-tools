@@ -9,7 +9,7 @@ services:
 
     ports:
       - "7054:7054"
-    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.sfeir.onlinepay.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/3572209be90bf569ff1b4680e5d5fc7433b0b6cb7e7f5f3544b59dac66e18897_sk -b admin:adminpw -d'
+    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.sfeir.onlinepay.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/4570f911456bd9c98ecb648eecefd318f21e4383800eea47babbee448d59ef77_sk -b admin:adminpw -d'
     volumes:
       - ./crypto-config/peerOrganizations/sfeir.onlinepay.com/ca/:/etc/hyperledger/fabric-ca-server-config
     container_name: ca.sfeir.onlinepay.com
