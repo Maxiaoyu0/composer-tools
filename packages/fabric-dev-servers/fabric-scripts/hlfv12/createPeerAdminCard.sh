@@ -77,8 +77,8 @@ fi
 
 cat << EOF > DevServer_connection.json
 {
-    "name": "sfeir",
-    "x-type": "sfeir",
+    "name": "hlfv1",
+    "x-type": "hlfv1",
     "x-commitTimeout": 300,
     "version": "1.0.0",
     "client": {
@@ -138,22 +138,22 @@ PRIVATE_KEY="${DIR}"/composer/crypto-config/peerOrganizations/sfeir.onlinepay.co
 CERT="${DIR}"/composer/crypto-config/peerOrganizations/sfeir.onlinepay.com/users/Admin@sfeir.onlinepay.com/msp/signcerts/Admin@sfeir.onlinepay.com-cert.pem
 
 if [ "${NOIMPORT}" != "true" ]; then
-    CARDOUTPUT=/tmp/PeerAdmin@sfeir.card
+    CARDOUTPUT=/tmp/PeerAdmin@hlfv1.card
 else
-    CARDOUTPUT=PeerAdmin@sfeir.card
+    CARDOUTPUT=PeerAdmin@hlfv1.card
 fi
 
 "${HL_COMPOSER_CLI}"  card create -p DevServer_connection.json -u PeerAdmin -c "${CERT}" -k "${PRIVATE_KEY}" -r PeerAdmin -r ChannelAdmin --file $CARDOUTPUT
 
 if [ "${NOIMPORT}" != "true" ]; then
-    if "${HL_COMPOSER_CLI}"  card list -c PeerAdmin@sfeir > /dev/null; then
-        "${HL_COMPOSER_CLI}"  card delete -c PeerAdmin@sfeir
+    if "${HL_COMPOSER_CLI}"  card list -c PeerAdmin@hlfv1 > /dev/null; then
+        "${HL_COMPOSER_CLI}"  card delete -c PeerAdmin@hlfv1
     fi
 
-    "${HL_COMPOSER_CLI}"  card import --file /tmp/PeerAdmin@sfeir.card 
+    "${HL_COMPOSER_CLI}"  card import --file /tmp/PeerAdmin@hlfv1.card
     "${HL_COMPOSER_CLI}"  card list
     echo "Hyperledger Composer PeerAdmin card has been imported, host of fabric specified as '${HOST}'"
-    rm /tmp/PeerAdmin@sfeir.card
+    rm /tmp/PeerAdmin@hlfv1.card
 else
     echo "Hyperledger Composer PeerAdmin card has been created, host of fabric specified as '${HOST}'"
 fi
