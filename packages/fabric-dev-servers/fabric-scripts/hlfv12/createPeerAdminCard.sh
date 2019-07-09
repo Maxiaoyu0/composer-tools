@@ -134,7 +134,7 @@ cat << EOF > DevServer_connection.json
 }
 EOF
 
-PRIVATE_KEY="${DIR}"/composer/crypto-config/peerOrganizations/sfeir.onlinepay.com/users/Admin@sfeir.onlinepay.com/msp/keystore/4a431895386b0e349c5da1d9aa09b3748ffb967f02064a2a3407aa77e982b08a_sk
+PRIVATE_KEY="${DIR}"/composer/crypto-config/peerOrganizations/sfeir.onlinepay.com/users/Admin@sfeir.onlinepay.com/msp/keystore/da64c2a2c2be3d07ffacf849caac6ebe97918a5d3c0bdec3cfd63962a8ab1b5f_sk
 CERT="${DIR}"/composer/crypto-config/peerOrganizations/sfeir.onlinepay.com/users/Admin@sfeir.onlinepay.com/msp/signcerts/Admin@sfeir.onlinepay.com-cert.pem
 
 if [ "${NOIMPORT}" != "true" ]; then
